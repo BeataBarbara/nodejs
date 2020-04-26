@@ -21,9 +21,9 @@ app.get('/portfolio', function (req, res) {
         })
         })
 
-app.listen(port, (err) => {
-    console.log('server działa na porcie', port)
-    if (err) { return console.log('Coś się popsuło', err)    }
+app.listen(process.env.PORT || 3000, (port, err) => {
+    console.log('server works on port', port)
+    if (err) { return console.log('Something gone wrong', err)    }
 } )
 app.use('/assets', express.static(path.join(__dirname, "./assets")));
 app.use('/js', express.static(path.join(__dirname, "./js")));   
@@ -44,8 +44,5 @@ const sample = () => {
     anotherTitle: sample()
     })
     })
-const server = app.listen(PORT, () => {
 
-});
-export default server;
 
